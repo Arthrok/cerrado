@@ -1,3 +1,4 @@
+from cProfile import label
 from decimal import Overflow
 from faulthandler import disable
 from html.entities import html5
@@ -128,8 +129,8 @@ app.layout = dbc.Container(
     dbc.Row([
             dbc.Row([
                 html.Div([
-                    html.H1('teste')
-                ], id="header")
+                    html.H2('Desmatamento - Uma comparação: Brasil x Mundo', style={"text-align":"center",})
+                ], id="header", style={"opacity":"80%", "border-radius":"10px"})
             ]),
             dbc.Row([   ## Coluna dos integrantes do grupo e texto
                 dbc.Col([ 
@@ -138,28 +139,28 @@ app.layout = dbc.Container(
                             dbc.Card([
                                 dbc.CardBody([
                                     html.Img(src=("https://cdn-icons-png.flaticon.com/512/711/711769.png"), height=51),
-                                    html.H6( 'Arthur Alves Melo', style={"color": "#389fd6"}),
-                                    html.H6( '211007856', style={"color": "#389fd6"}),               
+                                    html.H6( 'Arthur Alves Melo', style={"color": "#FFFFFF"}),
+                                    html.H6( '211007856', style={"color": "#FFFFFF"}),               
                                 ]),
-                            ]),
+                            ], style={"background-color":"rgb(144, 179, 64)", "border-radius":"25px", "opacity":"65%"}),
                         ]),    
                         dbc.Col([
                             dbc.Card([
                                 dbc.CardBody([
                                     html.Img(src=("https://cdn-icons-png.flaticon.com/512/711/711769.png"), height=51),
-                                    html.H6( 'Arthur L. Mercadante', style={"color": "#389fd6"}),
-                                    html.H6( '202028730', style={"color": "#389fd6"}),   
+                                    html.H6( 'Arthur L. Mercadante', style={"color": "#FFFFFF"}),
+                                    html.H6( '202028730', style={"color": "#FFFFFF"}),   
                                 ])
-                            ])
+                            ], style={"background-color":"rgb(144, 179, 64)", "border-radius":"25px", "opacity":"65%"})
                         ]),
                         dbc.Col([
                             dbc.Card([
                                 dbc.CardBody([
                                     html.Img(src=("https://cdn-icons-png.flaticon.com/512/711/711769.png"), height=51),
-                                    html.H6( 'Davi Toledo da Costa', style={"color": "#389fd6"}),
-                                    html.H6( '180118838 ', style={"color": "#389fd6"}),   
+                                    html.H6( 'Davi Toledo da Costa', style={"color": "#FFFFFF"}),
+                                    html.H6( '180118838 ', style={"color": "#FFFFFF"}),   
                                 ])
-                            ])
+                            ], style={"background-color":"rgb(144, 179, 64)", "border-radius":"25px", "opacity":"65%"})
                         ]),                                                                                                                                         
                     ], id="n1"),
                     dbc.Row ([
@@ -167,28 +168,28 @@ app.layout = dbc.Container(
                             dbc.Card([
                                 dbc.CardBody([
                                     html.Img(src=("https://cdn-icons-png.flaticon.com/512/711/711769.png"), height=51),
-                                    html.H6( 'Filipe Ferreira Pereira', style={"color": "#389fd6"}),
-                                    html.H6( '211061734', style={"color": "#389fd6"}),   
+                                    html.H6( 'Filipe Ferreira Pereira', style={"color": "#FFFFFF"}),
+                                    html.H6( '211061734', style={"color": "#FFFFFF"}),   
                                 ]),
-                            ]),
+                            ], style={"background-color":"rgb(144, 179, 64)", "border-radius":"25px", "opacity":"65%"}),
                         ]),    
                         dbc.Col([
                             dbc.Card([
                                 dbc.CardBody([
                                     html.Img(src=("https://cdn-icons-png.flaticon.com/512/711/711769.png"), height=51),
-                                    html.H6( 'Henrique M. Alencar', style={"color": "#389fd6"}),
-                                    html.H6( '211061860', style={"color": "#389fd6"}),   
+                                    html.H6( 'Henrique M. Alencar', style={"color": "#FFFFFF"}),
+                                    html.H6( '211061860', style={"color": "#FFFFFF"}),   
                                 ])
-                            ])
+                            ], style={"background-color":"rgb(144, 179, 64)", "border-radius":"25px", "opacity":"65%"})
                         ]),
                         dbc.Col([
                             dbc.Card([
                                 dbc.CardBody([
                                     html.Img(src=("https://cdn-icons-png.flaticon.com/512/711/711769.png"), height=51),
-                                    html.H6( 'Henrique M. Fortes', style={"color": "#389fd6"}),
-                                    html.H6( '211061879', style={"color": "#389fd6"}),   
+                                    html.H6( 'Henrique M. Fortes', style={"color": "#FFFFFF"}),
+                                    html.H6( '211061879', style={"color": "#FFFFFF"}),   
                                 ])
-                            ])
+                            ], style={"background-color":"rgb(144, 179, 64)", "border-radius":"25px", "opacity":"65%"})
                         ]),                                                                                                                                         
                     ], id="n2"),
                     dbc.Row ([
@@ -196,29 +197,29 @@ app.layout = dbc.Container(
                             dbc.Card([
                                 dbc.CardBody([
                                     html.Img(src=("https://cdn-icons-png.flaticon.com/512/711/711769.png"), height=51),
-                                    html.H6( 'Lucas O. Rodrigues', style={"color": "#389fd6"}),
-                                    html.H6( '202017684', style={"color": "#389fd6"}),   
+                                    html.H6( 'Lucas O. Rodrigues', style={"color": "#FFFFFF"}),
+                                    html.H6( '202017684', style={"color": "#FFFFFF"}),   
                                     
                                 ]),
-                            ]),
+                            ], style={"background-color":"rgb(144, 179, 64)", "border-radius":"25px", "opacity":"65%"}),
                         ]),    
                         dbc.Col([
                             dbc.Card([
                                 dbc.CardBody([
                                     html.Img(src=("https://cdn-icons-png.flaticon.com/512/711/711769.png"), height=51),
-                                    html.H6( 'Pedro Pinheiro Saad ', style={"color": "#389fd6"}),
-                                    html.H6( '211062393', style={"color": "#389fd6"}),   
+                                    html.H6( 'Pedro Pinheiro Saad ', style={"color": "#FFFFFF"}),
+                                    html.H6( '211062393', style={"color": "#FFFFFF"}),   
                                 ])
-                            ])
+                            ], style={"background-color":"rgb(144, 179, 64)", "border-radius":"25px", "opacity":"65%"})
                         ]),
                         dbc.Col([
                             dbc.Card([
                                 dbc.CardBody([
                                     html.Img(src=("https://cdn-icons-png.flaticon.com/512/711/711769.png"), height=51),
-                                    html.H6( 'Walker D. A. Andrade', style={"color": "#389fd6"}),
-                                    html.H6( '190096748', style={"color": "#389fd6"}),   
+                                    html.H6( 'Walker D. A. Andrade', style={"color": "#FFFFFF"}),
+                                    html.H6( '190096748', style={"color": "#FFFFFF"}),   
                                 ])
-                            ])
+                            ], style={"background-color":"rgb(144, 179, 64)", "border-radius":"25px", "opacity":"65%"})
                         ]),                                                                                                                                         
                     ], id="n3"),                                                                                                                         
                 ], md=5),
@@ -261,21 +262,20 @@ app.layout = dbc.Container(
                 dbc.Col([
                     dbc.Row ([      ##Dropdown
                         dbc.Col ([
-                            html.P("Selecione o local de foco de queimadas:"),
-                            dcc.Dropdown(id="drop1",
+                            dcc.Dropdown(id="drop1", placeholder="Selecione o local",
                                 options=[{"label": j, "value": i} for i, j in opcoes.items()], #j recebe a chave do dicicionário e j recebe o valor
                                 style={"margin-top": "10px"},
                                 clearable=True
                                 ),                        
-                        ]),
+                        ], id="select1"),
                         dbc.Col ([
-                            html.P("Selecione o ano:"),
-                            dcc.Dropdown(id="drop2",
+                            dcc.Dropdown(id="drop2", placeholder="Selecione o ano",
                             options=[{"label": j, "value": i} for i, j in anos.items()], #j recebe a chave do dicicionário e j recebe o valor
                             style={"margin-top": "10px"},
-                            clearable=True
+                            clearable=True,
+                        
                             ),                        
-                        ],), 
+                        ], id="select2"), 
                     ]),              
                     html.Div([
                         dcc.Graph(id="graph1", style={"height":"50vh"})
@@ -285,7 +285,6 @@ app.layout = dbc.Container(
                     html.Div([
                         html.Br(),
                         html.Br(),
-                        html.Br()
                     ]),
                     dcc.Loading(children=[
 
@@ -295,11 +294,21 @@ app.layout = dbc.Container(
                 ],md=6),
 
             ], id = "corpo2"),
+            html.Div([
+                html.Br()
+            ]),
             dbc.Row([
-                html.Div([
-                    html.H1("teste")
-                ])
-            ], id="final"),
+                dbc.Card ([
+                    dbc.CardBody([
+                        html.Span (
+                            'Após analisarmos os gráficos percebemos que as áreas consideradas como as menos desenvolvidas, tiveram um maior índice de desmatamento de até 10x maior que as áreas mais desenvolvidas. '
+                            'Isso pode ser atribuído a diversos fatores, o primeiro, é o fato que esses países já possuem uma flora mais devastada, com poucas áreas florestadas restantes, o que impossibilita a extração, e favorece a exportação entre diversos países. O segundo fator é a não necessidade de extração de madeiras, utilizada apenas de maneira não-industrial, o que pode ser sustentada, como dito no item anterior, pela importação de madeira vinda de países em desenvolvimento.'
+                            'No entanto, a informação mais importante a ser extraída desses gráficos é, que o número de hectares desmatados vem diminuindo nos últimos 5 anos, porém é importante notar que devido a queimadas acidentais recentes, a área desmatada teve um pico momentâneo na área da Oceania, e na Amazônia brasileira.'
+                            'Por último é importante ressaltar que enquanto o tamanho da área desmatada é importante, o real valor está no “Net forest Conversion”, que é uma simples conta que considera os hectares desmatados e o tamanho da área replantada. Esse número infelizmente permanece por volta dos 50% nos últimos 15 anos, de acordo com a UN FAO.'
+                        )
+                    ])
+                ], id="final"),
+            ]),
         ], id="pai2"),
 fluid=True, id="pai1")
 
@@ -448,7 +457,7 @@ def cerrado(ano_select, cerra, amaz, europ, geral):
                 x=c1,
                 y=c3,
                 name='Gráfico 1',
-                marker_color='#389fd6'   
+                marker_color='rgb(225, 210, 173)'
                 ))
     fig.update_layout(barmode='group', xaxis_tickangle=-45, font_color = 'white', paper_bgcolor="#242424", 
             plot_bgcolor="#242424", title="Área de Desmatamento", xaxis_title="Estado", yaxis_title="Área Desmatada (Km2)"
@@ -582,14 +591,14 @@ def amazonia(ano_selects, cerra, amaz, europ, conti):
 
     fig2 = px.choropleth_mapbox(xs, locations=xp, color=xt,
                         center={"lat": lt, "lon": ln}, zoom=3.2,
-                            geojson=maps, color_continuous_scale="PuBu", opacity=0.4,
+                            geojson=maps, color_continuous_scale="turbid", opacity=0.4,
                         )
     fig2.update_layout(
-        paper_bgcolor="#242424", 
+        paper_bgcolor="rgb(170, 211, 223)", 
         autosize=True, 
         margin = go.Margin(l=0, r=0, t=0, b=0),
         showlegend = False,
-        mapbox_style="carto-darkmatter",
+        mapbox_style="open-street-map",
         font_color = 'white'
     )
 

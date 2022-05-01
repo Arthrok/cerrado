@@ -1,7 +1,11 @@
 body {
-  background-color: #242424;
+  background-image: url(https://raw.githubusercontent.com/Dtcbsb/projeto/main/assets/desmatamento.png);
   height: 100%;
   position: relative;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-attachment: fixed;
+
 }
 
 #pai1 {
@@ -17,22 +21,28 @@ body {
   top: 25px;
   display: block;
   position: relative;
-  height: 70vh;
+  height: 563px;
   border-radius: 10px;
+  opacity: 80%;
+  background-color: rgb(18, 26, 2);
+}
+span {
+  color: white;
 }
 
 #header {
-  background-color: #242424;
+  background-color: rgb(18, 26, 2);
   display: block;
   position: relative;
 }
 
 
 #final {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(18, 26, 2);
   position: relative;
   display: block;
- 
+  opacity: 80%;
+  border-radius: 10px;
 }
 
 
@@ -51,6 +61,9 @@ body {
 #but-geral {
   position: relative;
   right: 5px;
+  background-color: green;
+  border-color: green;
+  opacity: 80%;
 }
 
 #but-america {
@@ -62,11 +75,17 @@ body {
 #but-brasil {
   position: relative;
   left: 5px;
+  background-color: green;
+  border-color: green;
+  opacity: 80%;
 }
 
 #but-europa {
   position: relative;
   left: 15px;
+  background-color: green;
+  border-color: green;
+  opacity: 80%;
 }
 
 #n1 {
@@ -94,6 +113,6 @@ img {
 H6 {
   position: relative;
   float: right;
+  opacity: 100%;
 }
-
 
